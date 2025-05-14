@@ -19,7 +19,6 @@ protocol RepositoryListServiceProtocol {
 final class RepositoryListService: RepositoryListServiceProtocol {
     
     let session = Alamofire.Session()
-    let keys = Keys()
     
     func getProjectList(page: Int, completion: @escaping (RepositoryListResponse?) -> Void, onError: @escaping (AFError) -> Void) {
         let urlString = URLs.apiGitHub.appendingFormat("/search/repositories?q=language:Java&sort=stars&page=%d&per_page=30", page)

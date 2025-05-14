@@ -15,7 +15,6 @@ protocol RepositoryServiceProtocol {
 final class RepositoryService: RepositoryServiceProtocol {
     
     let session = Alamofire.Session()
-    let keys = Keys()
     
     func getPullList(user: String, repository: String, completion: @escaping ([RepositoryPullModel]?) -> Void, onError: @escaping (AFError) -> Void) {
         let urlString = URLs.apiGitHub.appendingFormat("/repos/\(user)/\(repository)/pulls")
