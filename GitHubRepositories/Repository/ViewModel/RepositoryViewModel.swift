@@ -19,7 +19,7 @@ class RepositoryViewModel {
     // MARK: - Constants
     
     let pagination = PaginationSupport(size: 30)
-    let viewTitle = "Guithub JavaPop"
+    let viewTitle: String
     private var isLoading = false
     let emptyResponseMessage = "Não há pull requests para esse repositório"
     
@@ -40,6 +40,7 @@ class RepositoryViewModel {
     let didTapBack = PublishSubject<Void>()
     
     init(service: RepositoryServiceProtocol = RepositoryService(), owner: String, repo: String) {
+        viewTitle = repo
         states = initStates(service: service, owner: owner, repo: repo)
         routes = initRoutes()
     }

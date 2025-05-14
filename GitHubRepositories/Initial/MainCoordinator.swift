@@ -17,10 +17,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = RepositoryListViewModel(coordinator: self)
+        let viewModel = RepositoryListViewModel()
         let viewController = RepositoryListViewController(viewModel: viewModel)
-        let coordinator = RepositoryListCoordinator(coordinator: self)
-        coordinator.start()
         navigationController.navigationBar.backgroundColor = .black
         
         viewModel.routes

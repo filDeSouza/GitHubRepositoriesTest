@@ -21,7 +21,6 @@ class RepositoryListViewModel {
     let pagination = PaginationSupport(size: 30)
     let viewTitle = "Guithub JavaPop"
     private var isLoading = false
-    private let coordinator: MainCoordinator
     
     // MARK: - Variables
     
@@ -39,8 +38,7 @@ class RepositoryListViewModel {
     
     let didTapOpenRepository = PublishSubject<RepositoryListModel>()
     
-    init(service: RepositoryListServiceProtocol = RepositoryListService(), coordinator: MainCoordinator) {
-        self.coordinator = coordinator
+    init(service: RepositoryListServiceProtocol = RepositoryListService()) {
         states = initStates(service: service, page: page)
         routes = initRoutes()
     }

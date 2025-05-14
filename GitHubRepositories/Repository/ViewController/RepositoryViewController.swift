@@ -95,6 +95,10 @@ extension RepositoryViewController {
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
             ]
+        let backItem = UIBarButtonItem()
+        backItem.title = "Voltar"
+        navigationItem.backBarButtonItem = backItem
+        navigationController?.navigationBar.tintColor = .white
     }
 }
 
