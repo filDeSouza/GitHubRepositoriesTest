@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (5.10.2)
+  - ProgressHUD (14.1.1)
+  - RxCocoa (6.9.0):
+    - RxRelay (= 6.9.0)
+    - RxSwift (= 6.9.0)
+  - RxRelay (6.9.0):
+    - RxSwift (= 6.9.0)
+  - RxSwift (6.9.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - ProgressHUD
+  - RxCocoa
+  - RxSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ProgressHUD
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
+  RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
+  RxRelay: 6b0c930e5cef57d5fe2032571e5e65b78e3cbdb1
+  RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
+
+PODFILE CHECKSUM: 0ba2e912ca7fede809e0372fc1ef8dd413e99cd4
+
+COCOAPODS: 1.16.2
