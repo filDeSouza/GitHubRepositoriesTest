@@ -8,5 +8,6 @@
 import Foundation
 
 class Keys {
-    let gitToken = "token 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"
+    // A Api do git possui uma restrição do número de requisições realizadas, por esse motivo essa chave esta incluída. Para o push, essa chave esta sendo comentada
+//    let gitToken = "token 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"
 }
