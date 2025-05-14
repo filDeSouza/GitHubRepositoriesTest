@@ -260,3 +260,18 @@ extension Sequence where Iterator.Element: Hashable {
         return filter { duplicates.insert($0).inserted }
     }
 }
+
+public extension String {
+    func date(format: String) -> Date? {
+
+        let df = DateFormatter()
+        df.dateFormat = format
+
+        if let date = df.date(from: self) {
+
+            return date
+        }
+        df.calendar = Calendar(identifier: .iso8601)
+        return df.date(from: self)
+    }
+}

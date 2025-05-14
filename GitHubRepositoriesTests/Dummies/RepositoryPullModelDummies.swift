@@ -11,11 +11,9 @@ import Foundation
 
 extension RepositoryPullModel {
     static var dummy: RepositoryPullModel {
-        return RepositoryPullModel(title: "Teste",
-                                   id: 1,
-                                   head: HeadModel(repo: RepoModel(owner: OwnerModel(login: "Tester 1",
-                                                                                     avatar_url: ""),
-                                                                   description: "Description test 1")),
-                                   state: .open)
+        return RepositoryPullModel(title: "Teste", id: 1, head: HeadModel(repo: RepoModel(owner: OwnerModel(login: "Tester 1",
+                                                                                                            avatar_url: ""),
+                                                                                          description: "Description test 1")), state: .open, body: "Teste body", created_at: "2025-07-03".date(format: "yyyy-MM-dd")!, user: OwnerModel(login: "Tester 1",
+                                                                                                                                                                                                           avatar_url: ""))
     }
 }
