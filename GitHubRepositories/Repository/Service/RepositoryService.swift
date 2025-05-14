@@ -15,6 +15,7 @@ protocol RepositoryServiceProtocol {
 final class RepositoryService: RepositoryServiceProtocol {
     
     let session = Alamofire.Session()
+    let keys = Keys()
     
     func getPullList(user: String, repository: String, completion: @escaping ([RepositoryPullModel]?) -> Void, onError: @escaping (AFError) -> Void) {
         let urlString = URLs.apiGitHub.appendingFormat("/repos/\(user)/\(repository)/pulls")
@@ -27,8 +28,7 @@ final class RepositoryService: RepositoryServiceProtocol {
         decoder.dateDecodingStrategy = .iso8601
         
         var request = URLRequest(url: url)
-        // A Api do git possui uma restrição do número de requisições realizadas, por esse motivo essa chave esta incluída. Para o push, essa chave esta sendo comentada
-//        request.setValue(keys.gitToken, forHTTPHeaderField: "Authorization")
+        request.setValue(keys.gitToken, forHTTPHeaderField: "Authorization")
                         
         session.request(request)
             .validate(statusCode: 200...299)

@@ -19,6 +19,7 @@ protocol RepositoryListServiceProtocol {
 final class RepositoryListService: RepositoryListServiceProtocol {
     
     let session = Alamofire.Session()
+    let keys = Keys()
     
     func getProjectList(page: Int, completion: @escaping (RepositoryListResponse?) -> Void, onError: @escaping (AFError) -> Void) {
         let urlString = URLs.apiGitHub.appendingFormat("/search/repositories?q=language:Java&sort=stars&page=%d&per_page=30", page)
@@ -28,8 +29,7 @@ final class RepositoryListService: RepositoryListServiceProtocol {
         }
         
         var request = URLRequest(url: url)
-        // A Api do git possui uma restrição do número de requisições realizadas, por esse motivo essa chave esta incluída. Para o push, essa chave esta sendo comentada
-//        request.setValue(keys.gitToken, forHTTPHeaderField: "Authorization")
+        request.setValue(keys.gitToken, forHTTPHeaderField: "Authorization")
                         
         session.request(request)
             .validate(statusCode: 200...299)
